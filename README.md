@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# Intersection Observer를 이용한 무한 스크롤 구현
+2024 원티드 프리온보딩 FE 챌린지 사전 과제로 무한 스크롤을 구현하였습니다.<br/>
+[사전과제 요구사항 링크](https://gist.github.com/goldfrosch/034b966075059447efa1c00476849d68)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 실행 방법
+1. 프로젝트 clone
+2. `npm install`
+3. `npm start`
 
-## Available Scripts
+## 구현 결과
+https://github.com/user-attachments/assets/e2d86193-773d-4f1b-93d0-37cd53133ad4
 
-In the project directory, you can run:
+## 핵심 아이디어
+1. Intersection Observer API는 루트 요소를 스크롤하다 타겟 요소를 만나면 callback을 실행하는 API입니다.
+2. 루트로 지정할 요소, 그리고 타겟 요소가 어느 정도 보일 때 callback을 실행할 지 비율을 다음과 같이 지정해줄 수 있습니다.
+```javascript
+const options = {
+    root: document.querySelector('.App-main'), // 루트로 지정할 요소
+    rootMargin: '0px',
+    threshold: 0.5, // (0~1 사이값, 배열 지정 가능)
+  }
+```
 
-### `npm start`
+3. 옵저버 할당
+4. 타겟 지정
+5. 옵저버 해제
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+작성중...
